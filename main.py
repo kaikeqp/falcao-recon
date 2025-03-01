@@ -19,13 +19,14 @@ CONFIG = {
     "diretorio_rostos": "img_dbv",
     "dimensao_vetor": 512,
     "escala_frame": 0.5,
-    "use_gpu": True,
+    "use_gpu": False,  # Alterado para False para usar CPU
     "det_size": (640, 640),
 }
 
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
 app = FaceAnalysis()
-app.prepare(ctx_id=0 if not CONFIG["use_gpu"] else 0, det_size=CONFIG["det_size"])
+# Alterado para usar o contexto de CPU (ctx_id=-1)
+app.prepare(ctx_id=-1, det_size=CONFIG["det_size"])
 
 # =============== GERENCIADOR DE BANCO DE DADOS FACIAL ===============
 class FaceDatabaseManager:
