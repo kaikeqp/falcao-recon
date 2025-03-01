@@ -22,7 +22,7 @@ CONFIG = {
     "escala_frame": 0.5,
     "use_gpu": False,  # Alterado para False para usar CPU
     "det_size": (640, 640),
-    "model_path": os.path.abspath("models\\bufallo_l"),
+    "model_path": os.path.abspath("app/models/bufallo_l"),
 }
 
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
