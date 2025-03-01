@@ -12,6 +12,7 @@ import insightface
 from insightface.app import FaceAnalysis
 from pathlib import Path
 import uvicorn
+import onnxruntime
 
 # =============== CONFIGURAÇÕES ===============
 CONFIG = {
@@ -21,13 +22,13 @@ CONFIG = {
     "escala_frame": 0.5,
     "use_gpu": False,  # Alterado para False para usar CPU
     "det_size": (640, 640),
-    "model_path": os.path.abspath(""),
+    "model_path": os.path.abspath("models\\bufallo_l"),
 }
 
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
 # Configurar o ONNX Runtime para usar apenas a CPU
 
-app = FaceAnalysis(providers=['CPUExecutionProvider'])
+app = FaceAnalysis(providers=['CPUExecutionProvider'], root=CONFIG["model_path"])
 app.prepare(ctx_id=-1, det_size=CONFIG["det_size"])
 
 # =============== GERENCIADOR DE BANCO DE DADOS FACIAL ===============
