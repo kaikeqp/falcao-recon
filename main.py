@@ -12,7 +12,6 @@ import insightface
 from insightface.app import FaceAnalysis
 from pathlib import Path
 import uvicorn
-import onnxruntime
 
 # =============== CONFIGURAÇÕES ===============
 CONFIG = {
@@ -28,7 +27,7 @@ CONFIG = {
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
 # Configurar o ONNX Runtime para usar apenas a CPU
 
-app = FaceAnalysis()
+app = FaceAnalysis(providers=['CPUExecutionProvider'])
 app.prepare(ctx_id=-1, det_size=CONFIG["det_size"])
 
 # =============== GERENCIADOR DE BANCO DE DADOS FACIAL ===============
