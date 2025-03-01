@@ -22,13 +22,13 @@ CONFIG = {
     "escala_frame": 0.5,
     "use_gpu": False,  # Alterado para False para usar CPU
     "det_size": (640, 640),
-    "model_path": os.path.join("models", "buffalo_l"),
+    "model_path": os.path.join(""),
 }
 
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
 # Configurar o ONNX Runtime para usar apenas a CPU
 
-app = FaceAnalysis(name="buffalo_l", root=CONFIG["model_path"])
+app = FaceAnalysis(name="buffalo_l", root=CONFIG["model_path"], )
 app.prepare(ctx_id=-1, det_size=CONFIG["det_size"])
 
 # =============== GERENCIADOR DE BANCO DE DADOS FACIAL ===============
