@@ -22,7 +22,7 @@ CONFIG = {
     "escala_frame": 0.5,
     "use_gpu": False,  # Alterado para False para usar CPU
     "det_size": (640, 640),
-    "model_path": os.path.join("/"),
+    "model_path": os.path.join(""),
 }
 
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
@@ -172,4 +172,5 @@ async def get_access_logs():
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
-    uvicorn.run(api, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(api, host="0.0.0.0", port=port)
