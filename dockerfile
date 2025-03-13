@@ -26,6 +26,6 @@ COPY . .
 # 4. Criar diretório para rostos
 RUN mkdir -p img_dbv
 
-EXPOSE 80
+EXPOSE 8000
 
-CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "80"]
+CMD ["uvicorn", "main:api", "--host", "0.0.0.0", "--port", "8000"]
