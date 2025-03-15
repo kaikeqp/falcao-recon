@@ -1,3 +1,8 @@
+img_dbv/
+recognized_images/
+face_recognition.db
+logs.xlsx
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
