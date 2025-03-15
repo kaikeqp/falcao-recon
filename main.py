@@ -53,7 +53,7 @@ init_db()
 # =============== INICIALIZAÇÃO DO INSIGHTFACE ===============
 # Configurar o ONNX Runtime para usar apenas a CPU
 
-app = FaceAnalysis(name="buffalo_s", providers=['CPUExecutionProvider'], root=CONFIG["model_path"])
+app = FaceAnalysis(name="buffalo_l", providers=['CPUExecutionProvider'], root=CONFIG["model_path"])
 app.prepare(ctx_id=-1, det_size=CONFIG["det_size"])
 
 # =============== GERENCIADOR DE BANCO DE DADOS FACIAL ===============
